@@ -4,6 +4,7 @@
 <head>
   <title>Kitty Vote Tracker</title>
   <script src="Jquery/jquery-1.11.3.min.js"></script>
+  <script src="vote_tracker.js"></script>
   <link rel="stylesheet" type="text/css" media="all" href="vote_tracker_grid.css" />
   <link href="vote_tracker.css" type="text/css" rel="stylesheet"/>
   <link <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
@@ -18,6 +19,7 @@
       <p id="exp">Judge these kitties. Vote for your favorite by clicking on their photo! Done? See how much each kitty gets loving by clicking on the votes button below the picture.</p>
     </section>
     <section id="photo1" class="grid_6">
+        <img id="kit1" src=""></img>
        <button id="votesLeft"># votes</button>
        <table class="voteTotal1">
         <tr>
@@ -26,6 +28,7 @@
       </table>
     </section>
     <section id="photo2" class="grid_6">
+      <img id="kit2" src=""></img>
       <button id="votesRight"># votes</button>
       <table class="voteTotal2">
         <tr>
@@ -33,8 +36,6 @@
         </tr>
       </table>
     </section>
-
-
     <section id="playAgain" class="grid_10"
       <h2>Had fun? Click the Kitty to vote for two new kitties!</h2>
       <button id="reload">Reload</button>
@@ -44,8 +45,5 @@
     </footer>
 
   </article>
-
-<script src="vote_tracker.js"></script>
-
 </body>
 </html>
