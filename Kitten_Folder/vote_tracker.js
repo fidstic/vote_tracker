@@ -5,13 +5,7 @@ var Cat = function(url) {
   this.picUrl = url;
 };
 
-var Game = function() {
-  this.rounds = 0;
-}
-
 var picsArray = [];
-
-var myGame = new Game();
 
 $.ajax({
   url: "https://api.imgur.com/3/album/LGiPx",
@@ -24,10 +18,10 @@ $.ajax({
     for (i = 0; i < images.length; i++){
       picsArray.push(new Cat(images[i].link));
     };
-    myGame.insertCatPic();
+    insertCatPic();
   });
 
-Game.prototype.insertCatPic = function () {
+  insertCatPic = function () {
   var randIndex1 = Math.floor(Math.random() * picsArray.length);
   var randIndex2 = Math.floor(Math.random() * picsArray.length);
   console.log(randIndex1 + "  " + randIndex2);
@@ -35,10 +29,18 @@ Game.prototype.insertCatPic = function () {
     randIndex2 = Math.floor(Math.random() * picsArray.length - 1);
   }
 
+
   $('#kit1').attr('src', picsArray[randIndex1].picUrl);
   $('#kit2').attr('src', picsArray[randIndex2].picUrl);
-};
 
+  $('#kit1').on('click', function(){
+    var b = 1;
+    console.log(b);
+
+  });
+
+
+};
 
 
 
