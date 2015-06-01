@@ -21,48 +21,48 @@ $(document).ready(function() {
       insertCatPic();
     });
 
-  insertCatPic = function () {
-   var randIndex1 = Math.floor(Math.random() * picsArray.length);
-   var randIndex2 = Math.floor(Math.random() * picsArray.length);
-   console.log(randIndex1 + "  " + randIndex2);
-   while (randIndex1 === randIndex2) {
-     randIndex2 = Math.floor(Math.random() * picsArray.length - 1);
-   }
+    insertCatPic = function () {
+     var randIndex1 = Math.floor(Math.random() * picsArray.length);
+     var randIndex2 = Math.floor(Math.random() * picsArray.length);
+     console.log(randIndex1 + "  " + randIndex2);
+     while (randIndex1 === randIndex2) {
+       randIndex2 = Math.floor(Math.random() * picsArray.length - 1);
+     }
 
-  $('#kit1').attr('src', picsArray[randIndex1].picUrl);
-  $('#kit2').attr('src', picsArray[randIndex2].picUrl);
+    $('#kit1').attr('src', picsArray[randIndex1].picUrl);
+    $('#kit2').attr('src', picsArray[randIndex2].picUrl);
 
-  }
-
-
-
-  var voteL = 0;
-  $('#voteLeft').on('click', function(e){
-  voteL ++;
-  console.log(voteL);
-  $('.vote1Total').html("I have this many votes " + voteL);
-  $('#kit1').css({'border': '10px solid #F21905'});
-  $('#kit2').attr('src', picsArray[randIndex2].picUrl);
-
- });
-
-  var voteR = 0;
-  $('#voteRight').on('click', function(e){
-  voteR ++;
-  console.log(voteR);
-  $('.vote2Total').html("I have this many votes " + voteR);
-  $('#kit2').css({'border': '10px solid #F21905'});
-  $('#kit1').attr('src', picsArray[randIndex1].picUrl);
-
-});
+    }
 
 
-  $('#reload').on('click', function() {
-    insertCatPic();
-  $('#kit2').css({'border': ''});
-  $('#kit1').css({'border': ''});
 
-})
+    var voteL = 0;
+    $('#voteLeft').on('click', function(e){
+    voteL ++;
+    console.log(voteL);
+    $('.vote1Total').html("I have this many votes " + voteL);
+    $('#kit1').css({'border': '10px solid #F21905'});
+    $('#kit2').attr('src', picsArray[randIndex2].picUrl);
+
+   });
+
+    var voteR = 0;
+    $('#voteRight').on('click', function(e){
+    voteR ++;
+    console.log(voteR);
+    $('.vote2Total').html("I have this many votes " + voteR);
+    $('#kit2').css({'border': '10px solid #F21905'});
+    $('#kit1').attr('src', picsArray[randIndex1].picUrl);
+
+  });
+
+
+    $('#reload').on('click', function() {
+      insertCatPic();
+    $('#kit2').css({'border': ''});
+    $('#kit1').css({'border': ''});
+
+  })
 
 
 });
