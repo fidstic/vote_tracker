@@ -2,13 +2,28 @@
 var express = require('express');
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
+app.get('/secret', function(req, res) {
+  res.send(process.env.SECRET);
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
+app.use(function (req, res) {
+  var options = {
+    root: __dirname + '/public/'
+  };
+  res.sendFile('404.html', options, function (err) {
+    if (err) {
+      console.log(err);
+      res.status(err.status).end();
+    } else {
+      console.log('Sent:', '404.html ' + new Date());
+    }
+  });
+})
+
+var server = app.listen(process.env.PORT || 5000, function(){
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Listening at http:// ', host, port);
 });

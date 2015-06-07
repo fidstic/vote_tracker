@@ -1,0 +1,20 @@
+{
+  "name": "vote_tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vote_tracker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fidstic/vote_tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fidstic/vote_tracker/issues"
+  },
+  "homepage": "https://github.com/fidstic/vote_tracker#readme"
+}
